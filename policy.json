@@ -1,0 +1,91 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": [
+              "logs:CreateLogStream",
+              "logs:CreateLogGroup",
+              "logs:PutLogEvents"
+          ],
+          "Resource": "arn:aws:logs:*:*:*"
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "dynamodb:Scan",
+              "dynamodb:Query",
+              "dynamodb:GetItem",
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:DeleteItem"
+          ],
+          "Resource": "arn:aws:dynamodb:*:*:table/brand"
+      },
+
+      {
+        "Effect": "Allow",
+        "Action": [
+            "dynamodb:Scan",
+            "dynamodb:Query",
+            "dynamodb:GetItem",
+            "dynamodb:PutItem",
+            "dynamodb:UpdateItem",
+            "dynamodb:DeleteItem"
+        ],
+        "Resource": "arn:aws:dynamodb:*:*:table/category"
+    },
+
+    {
+        "Effect": "Allow",
+        "Action": [
+            "dynamodb:Scan",
+            "dynamodb:Query",
+            "dynamodb:GetItem",
+            "dynamodb:PutItem",
+            "dynamodb:UpdateItem",
+            "dynamodb:DeleteItem"
+        ],
+        "Resource": "arn:aws:dynamodb:*:*:table/car"
+    },
+
+    {
+        "Effect": "Allow",
+        "Action": [
+            "dynamodb:Scan",
+            "dynamodb:Query",
+            "dynamodb:GetItem",
+            "dynamodb:PutItem",
+            "dynamodb:UpdateItem",
+            "dynamodb:DeleteItem"
+        ],
+        "Resource": "arn:aws:dynamodb:*:*:table/client"
+    },
+
+    {
+        "Effect": "Allow",
+        "Action": [
+            "dynamodb:Scan",
+            "dynamodb:Query",
+            "dynamodb:GetItem",
+            "dynamodb:PutItem",
+            "dynamodb:UpdateItem",
+            "dynamodb:DeleteItem"
+        ],
+        "Resource": "arn:aws:dynamodb:*:*:table/booking"
+    },
+
+    {
+        "Effect": "Allow",
+        "Action": [
+            "dynamodb:Scan",
+            "dynamodb:Query",
+            "dynamodb:GetItem",
+            "dynamodb:PutItem",
+            "dynamodb:UpdateItem",
+            "dynamodb:DeleteItem"
+        ],
+        "Resource": "arn:aws:dynamodb:*:*:table/promo"
+    }
+    ]
+}

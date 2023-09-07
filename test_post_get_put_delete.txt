@@ -1,0 +1,11 @@
+# POST cars
+curl -X POST "https://50v6ktxxh7.execute-api.eu-central-1.amazonaws.com/prod/car" -H 'Content-Type: application/json' -d' {
+"car_id":  105,
+"car_name": "308",
+"brand_id": 2,
+"air_cond": "yes",
+"heating": "yes",
+"fuel":"diesel",
+"category_id": 1,
+"daily_cost": 200.5
+}'
