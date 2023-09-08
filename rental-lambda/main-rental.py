@@ -45,21 +45,30 @@ def lambda_handler(event, context):
                     }
                 }
                 )
-            print(dynamodb_response)
+
             return {
-                'statusCode': 201,
-            'body': '{"status":"car created"}'
+                'statusCode': 200,
+            'body': 'successfully created item!',
+            'headers': {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+                }
             }
         
         elif http_method == 'GET':
-            # Traitement pour la requête GET
-            car_id = event["pathParameters"]["car_id"]
-            return {"status_code" : 200,
-                    'body':json.dumps({"car_id": car_id}),
-                    'headers': {
-                        'Content-Type': 'application/json',
-                    },
-                    }
+            dynamodb_response = dynamodb_client.get_item(
+                TableName=os.environ["CARS_TABLE"],
+                key = {
+                    'id' : {'S' : 'name'}
+                }
+            )
+            
+            return {
+                'status_code' : '200',
+                'body' : 'objet bien lu'
+            }
+
+
     except Exception as e:
         logging.error(e)
         return {
